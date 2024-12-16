@@ -24,7 +24,7 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-export const login = createAsyncThunk(`${ENV.SERVER_URL}/login', async (userData, { rejectWithValue }) => {
+export const login = createAsyncThunk(`${ENV.SERVER_URL}/login`, async (userData, { rejectWithValue }) => {
   try {
     const response = await axios.post(`${ENV.SERVER_URL}/login`, userData);
     return response.data.user;
