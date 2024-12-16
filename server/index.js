@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const connectString = "mongodb+srv://admin:admin@postitcluster.lwvyk.mongodb.net/postITDb?retryWrites=true&w=majority&appName=POSTITCLUSTER";
+const connectString = `mongodb+srv://${ENV.DB_USER}:${ENV.DB_PASSWORD}@${ENV.DB_CLUSTER}/${ENV.DB_NAME}?retryWrites=true&w=majority&appName=POSTITCLUSTER`;
 mongoose.connect(connectString);
 
 const storage = multer.diskStorage({
